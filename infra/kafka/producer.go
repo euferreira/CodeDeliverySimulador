@@ -28,7 +28,7 @@ func Publish(msg string, topic string, producer *ckafka.Producer) error {
 		TopicPartition: ckafka.TopicPartition{Topic: &topic, Partition: -1},
 		Value:          []byte(msg),
 	}
-	log.Println("Mensagem enviada para o Kafka")
+	log.Println("Msg sending...");
 
 	err := producer.Produce(message, nil)
 
